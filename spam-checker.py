@@ -20,3 +20,9 @@ def clean_text(text):
     tokens = word_tokenize(text.lower())
 
     stopWords = set(stopwords.words('english'))
+    tokens = [word for word in tokens if word.isalnum() and word not in stopWords]
+
+    stemmer = PorterStemmer()
+    tokens = [stemmer.stem(word) for word in tokens]
+    
+    return ' '.join(tokens)
