@@ -13,5 +13,3 @@ import nltk
 
 nltk.download('punkt')
 nltk.download('stopwords')
-
-df = pd.read_csv("emails.csv")
