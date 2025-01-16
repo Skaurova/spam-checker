@@ -13,3 +13,10 @@ import nltk
 
 nltk.download('punkt')
 nltk.download('stopwords')
+
+
+def clean_text(text):
+
+    tokens = word_tokenize(text.lower())
+
+    stopWords = set(stopwords.words('english'))
