@@ -26,3 +26,12 @@ def clean_text(text):
     tokens = [stemmer.stem(word) for word in tokens]
     
     return ' '.join(tokens)
+
+data = {
+    'text': [
+        "Congratulations!"
+    ],
+    'label': [1, 0, 1, 0, 1]
+}
+
+df = pd.DataFrame(data)
