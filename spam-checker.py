@@ -29,9 +29,14 @@ def clean_text(text):
 
 data = {
     'text': [
-        "Congratulations!"
+        "Congratulations! You've won a free iPhone! Click here to claim.",
+        "Hi John, are we still meeting at 5 pm today?",
+        "Urgent: Your bank account is at risk. Please verify your credentials.",
+        "Can you send me the report by tomorrow?",
+        "Free vacation to the Bahamas! Call now to claim your prize.",
+        "Hello, I hope you're doing well. Let's catch up soon."
     ],
-    'label': [1, 0, 1, 0, 1]
+    'label': [1, 0, 1, 0, 1, 0]  # 1 = Spam, 0 = Not Spam
 }
 
 df = pd.DataFrame(data)
