@@ -40,3 +40,16 @@ data = {
 }
 
 df = pd.DataFrame(data)
+
+df['cleaned_text'] = df['text'].apply(clean_text)
+
+X_train, X_test, y_train, y_test = train_test_split(df['cleaned_text'], df['label'], test_size=0.2, random_state=42)
+
+vector = TfidfVectorizer()
+X_train_tfidf = vector.fit_transform(X_train)
+X_test_tfidf = vector.transform(X_test)
+
+model = MultinomialNB()
+model.fit(X_train_tfidf, y_train)
+
+y_pred = model.predict(X_test_tfidf)
